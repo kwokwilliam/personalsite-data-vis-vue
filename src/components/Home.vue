@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-      <div v-for="(item) in vFor" :key="item.computed">
+      <div v-for="(item) in vFor" :key="item.text">
           <p>Number of {{ item.text }} : {{ item.computed ? item.computed : 'loading...' }}</p>
       </div>
   </div>
@@ -25,6 +25,14 @@ export default {
         {
           text: "unique visitors",
           computed: this.data && this.getLengthOfData(this.data.uniqueVisitors)
+        },
+        {
+          text: "repeat visitors",
+          computed: this.data && this.getLengthOfData(this.data.repeatVisitors)
+        },
+        {
+          text: "unique repeat visitors",
+          computed: this.data && this.getUniqueCount(this.data.repeatVisitors)
         }
       ];
     }
@@ -33,6 +41,15 @@ export default {
   methods: {
     getLengthOfData: function(input) {
       return Object.keys(input).length;
+    },
+    getUniqueCount: function(input) {
+      let arr = [];
+      Object.keys(input).forEach(d => {
+        if (arr.indexOf(input[d].id) === -1) {
+          arr.push(input[d].id);
+        }
+      });
+      return arr.length;
     }
   },
 
