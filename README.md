@@ -3,10 +3,11 @@
 This app will display information about my personal site (https://williamk.info). It reads the data off of firebase. Because the data is anonymous, it is publically accessible.
 
 # Technologies used
+* D3
+* Firebase
 * Vue
 * Vue Router
-* Firebase
-* D3
+* Vuex 
 
 ## Project setup
 ```
