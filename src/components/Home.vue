@@ -1,6 +1,8 @@
 <template>
   <div class="hello">
-    <h1 v-if="data">{{ data }}</h1>
+      <div v-for="(item) in vFor" :key="item.computed">
+          <p>Number of {{ item.text }} : {{ item.computed ? item.computed : 'loading...' }}</p>
+      </div>
   </div>
 </template>
 
@@ -15,6 +17,23 @@ export default {
     return {
       data: undefined
     };
+  },
+
+  computed: {
+    vFor: function() {
+      return [
+        {
+          text: "unique visitors",
+          computed: this.data && this.getLengthOfData(this.data.uniqueVisitors)
+        }
+      ];
+    }
+  },
+
+  methods: {
+    getLengthOfData: function(input) {
+      return Object.keys(input).length;
+    }
   },
 
   // Create a firebase listener on create
