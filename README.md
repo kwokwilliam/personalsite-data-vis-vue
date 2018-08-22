@@ -7,7 +7,6 @@ This app will display information about my personal site (https://williamk.info)
 * Firebase
 * Vue
 * Vue Router
-* Vuex 
 
 ## Project setup
 ```

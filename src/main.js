@@ -16,9 +16,8 @@ let config = {
 firebase.initializeApp(config);
 
 Vue.use(VueRouter, Vuex);
-
 const routes = [
-    { path: '/', component: Home },
+    { path: '/', component: Home, props: { firebase } },
 ];
 
 const router = new VueRouter({
