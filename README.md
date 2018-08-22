@@ -1,4 +1,12 @@
-# personalsite-dataviewer
+# Personal website data visualization
+
+This app will display information about my personal site (https://williamk.info). It reads the data off of firebase. Because the data is anonymous, it is publically accessible.
+
+# Technologies used
+* Vue
+* Vue Router
+* Firebase
+* D3
 
 ## Project setup
 ```
