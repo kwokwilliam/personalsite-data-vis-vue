@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
-      <div v-for="(item) in vFor" :key="item.text">
-          <p>Number of {{ item.text }} : {{ item.computed ? item.computed : 'loading...' }}</p>
+      <div v-for="(item) in vFor" :key="item.text" style="width: 50%; margin: auto">
+          <p>Number of {{ item.text }} : <span style="margin-right: 0">{{ item.computed ? item.computed : 'loading...' }}</span></p>
       </div>
   </div>
 </template>
@@ -33,6 +33,39 @@ export default {
         {
           text: "unique repeat visitors",
           computed: this.data && this.getUniqueCount(this.data.repeatVisitors)
+        },
+        {
+          text: "resume downloads",
+          computed: this.data && this.getLengthOfData(this.data.resumeDownload)
+        },
+        {
+          text: "unique resume downloads",
+          computed: this.data && this.getUniqueCount(this.data.resumeDownload)
+        },
+        {
+          text: "resume page views",
+          computed: this.data && this.getLengthOfData(this.data.resumePageView)
+        },
+        {
+          text: "unique resume page views",
+          computed: this.data && this.getUniqueCount(this.data.resumePageView)
+        },
+        {
+          text: "about page views",
+          computed: this.data && this.getLengthOfData(this.data.aboutPageView)
+        },
+        {
+          text: "unique about page views",
+          computed: this.data && this.getUniqueCount(this.data.aboutPageView)
+        },
+        {
+          text: "projects page views",
+          computed:
+            this.data && this.getLengthOfData(this.data.projectsPageView)
+        },
+        {
+          text: "unique projects page views",
+          computed: this.data && this.getUniqueCount(this.data.projectsPageView)
         }
       ];
     }
